@@ -1,0 +1,16 @@
+permalink: /:categories/:year/:month/:day/:title
+
+exclude: [
+  ".gitignore",
+  ".DS_Store",
+  "Gemfile",
+  "Gemfile.lock",
+  "README.md",
+  "bower.json",
+  "bower_components",
+  "node_modules"
+]
+
+pygments: true
+safe: true
+markdown: kramdown
