@@ -10,7 +10,7 @@
     "grunt-bower-task": "~0.3.0"
   },
   "name": "help",
-  "description": "help ====",
+  "description": "Help and documentation for Myna.",
   "version": "0.0.0",
   "main": "_site/index.html",
   "dependencies": {
