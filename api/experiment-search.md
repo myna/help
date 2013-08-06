@@ -1,6 +1,7 @@
 ---
 layout: page
 title:  Experiment Search
+lead:   Get information on one or more experiments in your account.
 ---
 
 ## Request Format

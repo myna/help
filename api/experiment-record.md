@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  Experiment Record
-lead:   Record new user activity: page views and conversions.
+lead:   "Record new user activity: page views and conversions."
 ---
 
 ## Request Format
