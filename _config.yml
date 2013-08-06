@@ -5,6 +5,7 @@ exclude: [
   ".DS_Store",
   "Gemfile",
   "Gemfile.lock",
+  "Gruntfile.coffee",
   "README.md",
   "bower.json",
   "bower_components",
@@ -12,5 +13,4 @@ exclude: [
 ]
 
 pygments: true
-safe: true
 markdown: kramdown
