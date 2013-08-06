@@ -29,3 +29,16 @@ toc:
      - '/deployment/web/preview.html'
      - '/deployment/web/javascript.html'
      - '/deployment/web/google-analytics.html'
+
+  - head: '/api/index.html'
+    body:
+     - /api/authentication.html
+     - /api/errors.html
+     - /api/settings.html
+     - /api/experiment-create.html
+     - /api/experiment-read.html
+     - /api/experiment-search.html
+     - /api/experiment-record.html
+     - /api/experiment-reset.html
+     - /api/experiment-update.html
+     - /api/experiment-delete.html

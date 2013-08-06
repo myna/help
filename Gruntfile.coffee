@@ -83,6 +83,7 @@ module.exports = (grunt) ->
           "_plugins/**/*"
           "dashboard/**/*"
           "deployment/**/*"
+          "api/**/*"
         ]
         tasks: [
           "copy"

@@ -17,23 +17,24 @@ module Jekyll
       head = group['head']
       body = group['body']
 
+      head_page  = head && find_page(site, head)
+      body_pages = body && body.map { |path| find_page(site, path) }.select { |page| page }
+      all_pages  = ( [ head_page ] + body_pages ).select { |page| page }
+
       ans = ''
 
       if head && body
-        page = find_page(site, head)
-
-        ans += '<li' + render_active(page, curr, 'nav-toc-group') + '>'
-
-        if page
-          ans += render_link(page, 'nav-toc-heading')
+        if head_page
+          ans += '<li' + render_active([ head_page ], curr, 'nav-toc-group') + '>'
+          ans += render_link(head_page, 'nav-toc-heading')
         else
+          ans += '<li class="nav-toc-group">'
           ans += '<span class="nav-toc-heading">' + head + '</span>'
         end
 
-        ans += '<ul class="nav-toc-menu">'
-        body.each do |path|
-          page = find_page(site, path)
-          ans += '<li' + render_active(page, curr) + '>' + render_link(page, nil) + '</li>'
+        ans += '<ul' + render_active(all_pages, curr, 'nav-toc-menu') + '>'
+        body_pages.each do |page|
+          ans += '<li' + render_active([ page ], curr) + '>' + render_link(page, nil) + '</li>'
         end
         ans += '</ul>'
 
@@ -49,14 +50,18 @@ module Jekyll
 
     def render_link(page, css_class = nil)
       ans = ''
-      ans += '<a' + (if css_class then ' class="' + css_class + '"' else '' end) + ' href="' + page.url + '">'
-      ans += (page.data['title'] || page.url)
-      ans += '</a>'
+      if page
+        ans += '<a' + (if css_class then ' class="' + css_class + '"' else '' end) + ' href="' + page.url + '">'
+        ans += (page.data['title'] || page.url)
+        ans += '</a>'
+      else
+        ans += '<span>-</span>'
+      end
       ans
     end
 
-    def render_active(page, curr, css_class = nil)
-      if page && curr['url'] == page.url
+    def render_active(pages, curr, css_class = nil)
+      if pages.find { |page| curr['url'] == page.url }
         if css_class
           ' class="active ' + css_class + '"'
         else
