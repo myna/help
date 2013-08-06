@@ -48,7 +48,7 @@ module.exports = (grunt) ->
       install:
         cmd: "bundle install"
       jekyll:
-        cmd: "bundle exec jekyll build"
+        cmd: "bundle exec jekyll build --trace"
       deploy:
         cmd: 'rsync --progress -a --delete -e "ssh -q" _site/ admin@help.mynaweb.com:/srv/help.mynaweb.com/public/htdocs/'
 
@@ -76,9 +76,11 @@ module.exports = (grunt) ->
         ]
       html:
         files: [
+          "_config.yml"
           "index.md"
           "_includes/**/*"
           "_layouts/**/*"
+          "_plugins/**/*"
           "dashboard/**/*"
           "deployment/**/*"
         ]
