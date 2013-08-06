@@ -1,17 +1,31 @@
 permalink: /:categories/:year/:month/:day/:title
 
-exclude: [
-  ".gitignore",
-  ".DS_Store",
-  "Gemfile",
-  "Gemfile.lock",
-  "Gruntfile.coffee",
-  "README.md",
-  "bower.json",
-  "package.json",
-  "bower_components",
-  "node_modules"
-]
+exclude:
+  - ".gitignore"
+  - ".DS_Store"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "Gruntfile.coffee"
+  - "README.md"
+  - "bower.json"
+  - "package.json"
+  - "bower_components"
+  - "node_modules"
 
 pygments: true
 markdown: kramdown
+
+toc:
+  - head: '/index.html'
+    body: []
+
+  - head: '/dashboard/index.html'
+    body: []
+
+  - head: '/deployment/web/index.html'
+    body:
+     - '/deployment/web/variants.html'
+     - '/deployment/web/goals.html'
+     - '/deployment/web/preview.html'
+     - '/deployment/web/javascript.html'
+     - '/deployment/web/google-analytics.html'
