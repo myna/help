@@ -1,6 +1,7 @@
 ---
 layout : page
 title  : Google Analytics
+lead   : "Myna integrates with Google Analytics right out of the box: No configuration necessary."
 ---
 
 Myna automatically publishes two kinds of [custom events][] to Google Analytics:
@@ -10,7 +11,7 @@ Myna automatically publishes two kinds of [custom events][] to Google Analytics:
 
 [custom events]: https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide
 
-The event parameters are as follows:
+To enable this feature, simply add the Google Analytics snippet to your web site along site the Myna deployment snippet. The event parameters are as follows:
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -48,6 +49,8 @@ The event parameters are as follows:
     </tr>
   </tbody>
 </table>
+
+## Customising Google Analytics Behaviour
 
 <p class="alert">
   TODO: Customising Google Analytics behaviour.
