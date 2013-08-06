@@ -1,4 +1,4 @@
 ---
 layout: page
-title: Help
+title: The Dashboard
 ---
