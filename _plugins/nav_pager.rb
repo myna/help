@@ -6,8 +6,8 @@ module Jekyll
       toc  = site.config['toc'].flat_map { |item| flattened_toc(item) }
 
       curr_index = toc.find_index { |item| item == page['url'] }
-      prev_index = (curr_index > 0) && curr_index - 1
-      next_index = (curr_index < toc.length - 1) && curr_index + 1
+      prev_index = curr_index && (curr_index > 0) && curr_index - 1
+      next_index = curr_index && (curr_index < toc.length - 1) && curr_index + 1
 
       prev_path = prev_index && toc[prev_index]
       prev_page = prev_index && site.pages.find { |page| page.url == prev_path }
