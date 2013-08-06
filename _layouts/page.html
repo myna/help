@@ -1,5 +1,21 @@
 ---
 layout: default
-title: Help
 ---
-{{ content }}
+<h1>{{ page.title }}</h1>
+
+<p class="lead">
+  <small>
+  {% if page.lead %}{{ page.lead }}{% else %}&nbsp;{% endif %}
+  </small>
+</p>
+
+<div class="row">
+  <div class="col-lg-3 col-md-3">
+    <div class="panel toc-panel">
+      {% include toc.html %}
+    </div>
+  </div>
+  <div class="col-lg-9 col-md-9">
+    {{ content }}
+  </div>
+</div>

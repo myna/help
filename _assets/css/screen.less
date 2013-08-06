@@ -1,2 +1,24 @@
 @import "bootstrap.less";
+@import "custom-variables.less";
 @import "syntax.less";
+
+.toc-panel {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul ul {
+    padding-left: @line-height-computed;
+    font-size: @font-size-base * .9;
+  }
+
+  li {
+    margin-bottom: (@line-height-computed / 2);
+  }
+
+
+  li li {
+    margin-bottom: 0;
+  }
+}
