@@ -1,6 +1,7 @@
 ---
 layout: page
 title: The REST API
+lead: Myna's REST API allows you to connect any client that can make a HTTP request
 ---
 
 The goal of Myna's API is simple: if you can think of an experiment, you should be able to code it against our API. To this end, the API has a very flexible model of interaction:

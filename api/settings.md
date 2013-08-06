@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Settings
+lead: Setting allow you to encode useful metadata along with your experiment
 ---
 
 Every experiment and variant contains a hash of settings, which can be used to store useful metadata.
