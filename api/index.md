@@ -33,4 +33,4 @@ All endpoints accept and return JSON, with the exception of a few special cases 
 
 ## Securing Your Connection
 
-Myna's API is available over both secure (HTTPS) and unsecure connections. You should use SSL encrypted requests for all calls that require [authentication](authentication.html). For other calls use whichever is more convenient. In particular, cross-domain requests from a web browser should match the protocol (HTTP or HTTPS) used by the page the browser is displaying to avoid security warnings.
+Myna's API is available over both secure (HTTPS) and unsecure connections. You should use SSL encrypted requests as described in the section on [authentication](authentication.html). Note that cross-domain requests from a web browser should match the protocol (HTTP or HTTPS) used by the page the browser is displaying to avoid security warnings.
