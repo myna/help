@@ -8,6 +8,7 @@ exclude: [
   "Gruntfile.coffee",
   "README.md",
   "bower.json",
+  "package.json",
   "bower_components",
   "node_modules"
 ]

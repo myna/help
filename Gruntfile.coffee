@@ -49,6 +49,8 @@ module.exports = (grunt) ->
         cmd: "bundle install"
       jekyll:
         cmd: "bundle exec jekyll build"
+      deploy:
+        cmd: 'rsync --progress -a --delete -e "ssh -q" _site/ admin@help.mynaweb.com:/srv/help.mynaweb.com/public/htdocs/'
 
     bower:
       install: {}
@@ -98,7 +100,7 @@ module.exports = (grunt) ->
     "exec:jekyll"
   ]
 
-  grunt.registerTask "default", [
+  grunt.registerTask "serve", [
     "build"
     "connect:server"
     "watch"
@@ -107,4 +109,8 @@ module.exports = (grunt) ->
   grunt.registerTask "deploy", [
     "build"
     "exec:deploy"
+  ]
+
+  grunt.registerTask "default", [
+    "serve"
   ]
