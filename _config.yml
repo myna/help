@@ -43,3 +43,14 @@ toc:
      - /api/experiment-reset.html
      - /api/experiment-update.html
      - /api/experiment-delete.html
+
+  - head: '/js/index.html'
+    body: 
+     - /js/quick-start.html
+     - /js/client.html
+     - /js/experiment.html
+     - /js/base-experiment.html
+     - /js/log.html
+     - /js/contributing.html
+
+
