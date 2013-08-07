@@ -3,11 +3,11 @@ layout : page
 title  : Deploying on the Web
 ---
 
-Web deployments use Myna's HTML5 client library, *Myna for HTML*.
+Once you have created an experiment on your dashboard, you need to *deploy* it to your web site or mobile app. Deployment means installing one of our clients on your site, and tweaking your HTML to set up the variants and conversion goals for your experiment.
 
-On your dashboard we provide you with a snippet of code that you can copy and paste into the header of your page template. Once you have done this you can set up variants and conversion goals for all of your web experiments, *without* doing any programming!
+Web deployments use Myna's HTML5 client library, *Myna for HTML*. On your dashboard we provide you with a snippet of code that you can copy and paste into the header of your page template. Once you have done this you can set up variants and conversion goals for all of your web experiments, *without* doing any programming!
 
-## Getting Up and Running
+## Deployment Snippet
 
 First, copy and paste the **deployment snippet** from your dashboard to your web site. You can find the snippet on the *Deployment* tab of any experiment. It looks like this:
 

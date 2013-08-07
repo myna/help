@@ -29,6 +29,7 @@ toc:
      - '/deployment/web/preview.html'
      - '/deployment/web/javascript.html'
      - '/deployment/web/google-analytics.html'
+     - '/deployment/web/customisation.html'
 
   - head: '/api/index.html'
     body:

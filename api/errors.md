@@ -27,14 +27,18 @@ An example error response follows:
 
 {% highlight json %}
 {
-  "typename":  "problem",
+  "typename": "problem",
   "timestamp": "2013-08-06T15:59:33.232Z",
-  "status":    403,
-  "messages":  [{
-    "typename": "authentication",
-    "message":  "You must provide user credentials.",
-    "data":     {"credentials": "anonymous"}
-  }]
+  "status": 403,
+  "messages": [
+    {
+      "typename": "authentication",
+      "message": "You must provide user credentials.",
+      "data": {
+        "credentials": "anonymous"
+      }
+    }
+  ]
 }
 {% endhighlight %}
 
