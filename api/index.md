@@ -8,7 +8,9 @@ The goal of Myna's API is simple: if you can think of an experiment, you should 
 
 - Clients obtain the current state of an experiment. This includes weights on the variants, representing Myna's suggestion of the proportions in which the variants should be displayed. Clients can use these weights to make one or more suggestions, or combine the weights with other rules to choose variants to display
 
-- Client notify Myna about variants that were displayed and rewards that were received. This data can sent back as it happens, or in a batched up if, for example, the client is offline. It is largely up to client to ensure that this data makes sense -- for example, that there are not more conversions than views.
+- Client notify Myna about variants that were displayed and rewards that were received. This data can be sent back as it happens, or batched up if, for example, the client is offline. It is largely up to the client to ensure that this data makes sense -- for example, that there are not more conversions than views.
+
+The above two actions are performed using the [read](experiment-read.html) and [record](experiment-record.html) endpoints respectively. There are also endpoints for [creating](experiment-create.html), [updating](experiment-update.html), and [deleting](experiment-delete.html) experiments, and more. It is possible to build an entire dashboard on top of the API (we know, because we've done it!)
 
 
 ## URLs
@@ -33,4 +35,4 @@ All endpoints accept and return JSON, with the exception of a few special cases 
 
 ## Securing Your Connection
 
-Myna's API is available over both secure (HTTPS) and unsecure connections. You should use SSL encrypted requests as described in the section on [authentication](authentication.html). Note that cross-domain requests from a web browser should match the protocol (HTTP or HTTPS) used by the page the browser is displaying to avoid security warnings.
+Myna's API is available over both secure (HTTPS) and unsecure connections. The section on [authentication](authentication.html) goes into more detail on when you should use one or the other. Note that cross-domain requests from a web browser should match the protocol (HTTP or HTTPS) used by the page the browser is displaying to avoid security warnings.

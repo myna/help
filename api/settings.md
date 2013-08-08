@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Settings
-lead: Setting allow you to encode useful metadata along with your experiment
+lead: Settings allow you to encode useful metadata along with your experiment
 ---
 
 Every experiment and variant contains a hash of settings, which can be used to store useful metadata.
 
 For example, variant settings can be used to store choices of layout, colours, and text. Experiment settings can be used to store user information for geographical targetting, Google Analytics integration, and so on.
 
-Settings can be updated via the Myna API and dashboard without having to edit code on the target web site or app. You can use the APIs in Myna clients such as Myna for Javascript and Myna for iOS to access the latest settings and use them as necessary.
+Settings can be updated via the Myna API and dashboard without having to edit code on the target web site or app. You can use the APIs in Myna clients to access the latest settings and use them as necessary.
 
 Settings can be updated via the API using two keys. The `settings` key is used for wholesale replacement of the settings for a given experiment or variant; the `settingsUpdates` key can be used to update individual settings without overwriting the whole hash.
 

@@ -4,7 +4,7 @@ title: Error Handling
 lead: Myna handles errors in a consistent manner, making handling errors easy.
 ---
 
-Myna handles errors in keeping with REST principles. Errors are reported with HTTP status codes in the 400 (for client errors) or 500 (for server errors) range. The response will contain a JSON object describing the error.
+Errors are reported with HTTP status codes in the 400 (for client errors) or 500 (for server errors) range. The response will contain a JSON object describing the error.
 
 ## Error Format
 
