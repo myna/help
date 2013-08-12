@@ -4,9 +4,17 @@ title:  Help
 lead:   All-new documentation for an all-new Myna.
 ---
 
-<p class="alert alert-danger">
-  This is a work-in-progress help site for a forthcoming update to Myna. We'll be launching this update soon. In the meantime, please refer to our <a href="https://mynaweb.com/help">existing site</a> for help and support.
-</p>
+<div class="alert alert-danger">
+  <p><strong>This is a work-in-progress help site for <a href="https://mynaweb.com/dashboard/v2">Myna v2</a></strong>, which is currently in public beta.</p>
+
+  <p>
+    Myna v2 is pre-release software - it is subject to change and may contain bugs and missing features. Please report any issues via our <a href="https://mynaweb.com/contact">contact page</a>.
+  </p>
+
+  <p>
+    In the meantime, we recommend using the <a href="https://mynaweb.com/dashboard">regular dashboard</a> for mission critical experiments until the software comes out of beta. Please refer to our <a href="https://mynaweb.com/help">existing help site</a> for support with the regular dashboard.
+  </p>
+</div>
 
 ## What's new?
 
