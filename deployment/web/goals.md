@@ -49,7 +49,7 @@ You can set up a page load goal as follows:
 <p>Tag the <code>&lt;body&gt;</code> or <code>&lt;html&gt;</code> tag of your page with the CSS class for your experiment:</p>
 
 {% highlight html %}
-<body class="myna">
+<body class="myna-experimentid">
 {% endhighlight %}
 </li>
 
@@ -57,7 +57,7 @@ You can set up a page load goal as follows:
 <p>Add a <code>data-goal</code> attribute to the element:</p>
 
 {% highlight html %}
-<body class="myna" data-goal="load">
+<body class="myna-experimentid" data-goal="load">
 {% endhighlight %}
 </li>
 </ol>
