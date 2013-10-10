@@ -54,10 +54,16 @@ Content-Length: <length>
 
 ## JSONP
 
-A GET variant of the endpoint makes it easier to upload information about a single view or reward using JSONP. A `callback` parameter can be provided to the GET variant to specify the JSONP function name.
+A GET variant of the endpoint makes it easier to upload information about a single view or reward using JSONP. This endpoint accepts several URL parameters:
+
+- The `typename` parameter must be one of `view` or `reward`, specifying the type of information included in the request.
+- The `variant` parameter gives the ID of the variant that is affected.
+- The `reward` parameter, if present, specifies the reward the variant receives.
+- The `apikey` parameter gives the API key used to authorise the action.
+- If a `callback` parameter is provided, the JSON response is wrapped in a call to the callback function. Otherwise the response is plain JSON.
 
 {% highlight http %}
-GET /v2/experiment/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/record?variant=variant1&amount=1.0&callback=myCallback HTTP/1.1
+GET /v2/experiment/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/record?variant=variant1&amount=1.0&callback=myCallback&typename=reward&apikey=bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb HTTP/1.1
 {% endhighlight %}
 
 {% highlight http %}
