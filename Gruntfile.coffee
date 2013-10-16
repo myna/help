@@ -50,7 +50,7 @@ module.exports = (grunt) ->
       jekyll:
         cmd: "bundle exec jekyll build --trace"
       deploy:
-        cmd: 'rsync --progress -a --delete -e "ssh -q" _site/ admin@help.mynaweb.com:/srv/help.mynaweb.com/public/htdocs/'
+        cmd: 'rsync --progress -a -e "ssh -q" _site/ admin@help.mynaweb.com:/srv/help.mynaweb.com/public/htdocs/'
 
     bower:
       install: {}
@@ -85,6 +85,7 @@ module.exports = (grunt) ->
           "deployment/**/*"
           "api/**/*"
           "js/**/*"
+          "php/**/*"
         ]
         tasks: [
           "copy"
