@@ -53,4 +53,7 @@ toc:
      - /js/log.html
      - /js/contributing.html
 
-
+  - head: '/php/index.html'
+    body: 
+      - /php/quick-start.html
+      - /php/api.html
