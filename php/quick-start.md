@@ -35,10 +35,15 @@ $client = \Myna\Myna::init("<deployment UUID>");
 
 ### Getting a Suggestion
 
-With a client you can call methods to get a suggestion:
+With a client you can call the `suggest` method to get a suggestion. **The `suggest` method must be called before any output from your script, including `<html>`, as it needs to set a cookie. See [setcookie](http://php.net/manual/en/function.setcookie.php) for more.**
 
 {% highlight php %}
-$variant = $client->suggest("<experiment ID>");
+try {
+    $variant = $client->suggest("<experiment ID>");
+} catch (Exception $e) {
+    // Add your own error handling. You probably want to log the
+    // exception and make sure you display some default variant.
+}
 {% endhighlight %}
 
 This returns a `Variant` object. You can access properties of this object to get the name, ID, and settings of this variant:
@@ -56,7 +61,11 @@ Myna for PHP remembers the suggestion show to a user (using a cookie) and always
 Making a reward is simple:
 
 {% highlight php %}
-$client->reward("<experiment ID>");
+try {
+    $client->reward("<experiment ID>");
+} catch (Exception $e) {
+    // Log the error
+}
 {% endhighlight %}
 
 This will reward the suggestion made earlier.
