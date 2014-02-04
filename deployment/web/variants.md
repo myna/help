@@ -8,7 +8,8 @@ You can design variants by adding *variant settings* on your dashboard and refer
  1. swap content in and out by showing and hiding HTML elements;
  2. restyle content by adding and removing CSS classes;
  3. alter the text in an element;
- 4. alter an attribute on an element (e.g. the `src` attribute on an image or iframe).
+ 4. alter an attribute on an element (e.g. the `src` attribute on an image or iframe);
+ 5. redirect to another page.
 
 Each technique is described in detail below. The basic technique for all variants is:
 
@@ -167,3 +168,13 @@ Myna will automatically update the attribute to match the value on your dashboar
 {% highlight html %}
 <img class="myna-experimentid" src="/images/image1.jpg">
 {% endhighlight %}
+
+### Redirecting to Another Page
+
+You can use *variant settings* to redirect to a URL by putting a `data-redirect` directive onto any element on a page.
+
+{% highlight html %}
+<body class="myna-experimentid" data-redirect="url"></body>
+{% endhighlight %}
+
+The URL will be taken the variant setting corresponding to the value of the `data-redirect` attribute. In the example above the `url` setting will be used. If the variant chosen to display does not have that setting the user will not be redirected.
