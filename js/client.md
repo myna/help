@@ -1,23 +1,67 @@
 ---
 layout: page
-title: Client
-lead: Client's are the main entry point to Myna for Javascript
+title: Myna JS Client
+lead: Clients are the main entry point to Myna for Javascript
 ---
 
-A `Client` wraps up a number of [`Experiments`](experiment.html)
+The call to `Myna.init`, `Myna.initLocal`, or `Myna.initRemote` will asynchronously initialize Myna and call your `success` callback, passing you a *client* object. This object is also published as `window.Myna.client`:
 
-### new Client(options)
+~~~ js
+console.log(Myna.client);
+// => Client { ... }
+~~~
 
-Constructs a `Client` from the given `options`. `Options` is a hash with the following elements:
+# Suggesting variants
 
-- `uuid`: The deployment UUID. Currently unused.
-- `apiKey`: The [API Key](/api/authentication.html) to use when contacting the Myna server. Required.
-- `apiRoot`: The URI root of the Myna server. Defaults to `//api.mynaweb.com/`.
-- `settings`: A `Settings` object. Currently unused.
-- `experiments`: An array of `Experiment`s.
+You can ask Myna to *suggest* a variant from on of your experiments using the `suggest` method. This uses the latest experiment data to select the optimal variant to display to this user:
 
-### Client#suggest(exptId, [success], [error])
+~~~ js
+Myna.client.suggest(
+  experimentId,
+  function successCallback(variant, firstTimeSuggested) {
+    // Set up the page for the relevant variant...
+  },
+  function errorCallback() {
+    // Something went wrong - fall back to a default variant...
+  }
+);
+~~~
 
-### Client#view(exptId, variantId, [success], [error])
+You can see and edit the ID of your experiment on the *Experiment Settings* page of your dashboard:
 
-### Client#reward(exptId, amount, [success], [error])
+<img class="thumbnail center" src="experiment-settings-id.png" alt="Myna dashboard showing an experiment ID">
+
+Myna calls `successCallback` with two arguements: a `Variant` object and a `boolean` saying whether the variant is being suggested for the first time (as opposed to being loaded from a cookie). You can check which variant Myna is suggesting using its `id` field:
+
+~~~ js
+Myna.client.suggest(
+  experimentId,
+  function successCallback(variant, firstTimeSuggested) {
+    switch(variant.id) {
+      case "variant1":
+        // Set up the page and conversion goals for variant 1...
+        break;
+      case "variant2":
+        // Set up the page and conversion goals for variant 2...
+        break;
+      // And so on...
+    }
+  }
+);
+~~~
+
+You can see and edit the ID for each of your variants on the *Variants* page of your Dashboard:
+
+<img class="thumbnail center" src="variant-settings-id.png" alt="Myna dashboard showing variant IDs">
+
+Myna automatically takes care of repeated calls to `suggest`. The behaviour of the method follows the settings from your Dashboard. If your experiment is set up with *sticky* variants (the default), `suggest` will always return the same variant and Myna will only record one view for the experiment.
+
+# Rewarding variants
+
+If a user converts, you can reward the suggested variant using the client's `reward` method:
+
+~~~ js
+Myna.client.reward(experimentId);
+~~~
+
+Myna automatically takes care of repeated calls to `reward`.
